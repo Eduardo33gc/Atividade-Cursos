@@ -1,0 +1,19 @@
+.container {
+    font-family: Arial, sans-serif;
+    text-align: justify;
+}
+
+.display-4 {
+    color: #007BFF;
+}
+
+.lead {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+p {
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title%}
+Sobre mim
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h1>{{ mensagem }}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <img src="{% static 'image/perfil.jpg' %}" alt="Imagem do post">
+                <div>
+                    <h5 class="mt-5">Eduardo Gonçalves de Carvalho</h5>
+                    <p class="mt-3">Em processo de formação como Técnico em
+                        Informática em ensino integrado pelo Instituto Federal do Rio Grande do Norte,
+                        Campus Pau dos Ferros. Participa como pesquisador no Grupo de Pesquisa Linguagens e Práticas
+                        Sociais (IFRN/CNPq).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

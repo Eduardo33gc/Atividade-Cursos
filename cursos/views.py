@@ -7,6 +7,10 @@ def index(request):
     context = {'mensagem': 'Conheça os cursos do IFRN - Campus Pau dos Ferros'}
     return render(request, 'core/index.html', context)
 
+def sobre_mim(request):
+    context = {'mensagem': 'Conheça mais sobre o desenvolvedor'}
+    return render(request, 'core/sobre.html', context)
+
 def lista_alimentos(request):
     postagens = Alimentos.objects.all()
     context = {

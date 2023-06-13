@@ -1,13 +1,28 @@
 {% extends 'base.html'%}
 
-{% block body %}
+{% block title%}
+Página inicial
+{% endblock %}
 
+{% block body %}
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12">
             <h1>{{ mensagem }}</h1>
         </div>
+        <div>
+            <ul class="lista">
+                <li>
+                    <a href="{% url 'lista-alimentos' %}">Alimentos</a>
+                </li>
+                <li>
+                    <a href="{% url 'lista-apicultura' %}">Apicultura</a>
+                </li>
+                <li>
+                    <a href="{% url 'lista-informatica' %}">Informática</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-
 {% endblock %}

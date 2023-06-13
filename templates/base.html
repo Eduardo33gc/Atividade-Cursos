@@ -2,11 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <title>
         {% block title%}
-            Página inicial
-        {% endblock %}    
+        Página inicial
+        {% endblock %}
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,19 +18,63 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
+
 <body>
-    
+
     <body>
-        
+
         {% include 'menu.html' %}
-      
+
+
         <div class="container text-center">
-           {% block body %}     
-            
-           {% endblock  %}
+            {% block body %}
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h1>{{ mensagem }}</h1>
+                    </div>
+                    <div>
+                        <ul class="lista">
+                            <li>
+                                <a href="{% url 'lista-alimentos' %}">Alimentos</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'lista-apicultura' %}">Apicultura</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'lista-informatica' %}">Informática</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-5">
+                {% for objeto in lista_postagens %}
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card mb-5 shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" src="{{  objeto.imagem.url  }}"
+                                alt="Imagem do post">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ objeto.titulo }}</h5>
+                                <p class="card-text">{{ objeto.texto }}</p>
+                                <!-- | truncatechars:100  -->
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <small class="text-muted">{{ objeto.data_criacao }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            {% endblock %}
         </div>
-      
-      </body>
+
+    </body>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -38,4 +83,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

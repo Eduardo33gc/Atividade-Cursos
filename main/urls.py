@@ -16,13 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cursos.views import index,lista_alimentos,lista_apicultura,lista_informatica
+from cursos.views import index,lista_alimentos,lista_apicultura,lista_informatica, sobre_mim
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name='index'), 
+    path('sobre/', sobre_mim,name='sobre-mim'),
     path('alimentos/',lista_alimentos,name='lista-alimentos'),
     path('apicultura/',lista_apicultura,name='lista-apicultura'),
     path('informatica/',lista_informatica,name='lista-informatica'),
